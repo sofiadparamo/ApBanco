@@ -88,7 +88,9 @@ public class Banco{
 		boolean empty=false;
 		
 		while(!empty){
-			System.out.println("Numero: "+cuentasBancarias[indice].getNumero()+"\tSaldo: "+cuentasBancarias[indice].getSaldo()+"\t\tRFC: "+cuentasBancarias[indice].getRfc()+"\t Fecha: "+cuentasBancarias[indice].getFecha());
+			
+			if(!cuentasBancarias[indice].getNumero().equals("null"))
+				System.out.println("Numero: "+cuentasBancarias[indice].getNumero()+"\tSaldo: "+cuentasBancarias[indice].getSaldo()+"\t\tRFC: "+cuentasBancarias[indice].getRfc()+"\t Fecha: "+cuentasBancarias[indice].getFecha());
 			
 			if(cuentasBancarias[indice].getNumero().equals("null")){
 				

@@ -16,6 +16,20 @@ public class ApBanco{
 				case 1:
 					miBanco.crearCuenta();
 					break;
+				case 2:
+					break;
+				case 3:
+					break;
+				case 4:
+					break;
+				case 5:
+					break;
+				case 6:
+					break;
+				case 7:
+					break;
+				case 8:
+					break;
 				case 9:
 					miBanco.mostrarCuentas();
 					break;
@@ -27,6 +41,6 @@ public class ApBanco{
 	}
 	
 	private static void mostrarMenu(){
-		System.out.print("1) Nueva cuenta\t\t2) Nuevo Cuentahabiente\t3) Depósito a cuenta\t4) Retiro\n5) Transferencia\t6) Nuevo prestamo\t7) Pago\t\t\t8) Estado de cuenta\nOpción: ");
+		System.out.print("1) Nueva cuenta\t\t2) Nuevo Cuentahabiente\t3) Depósito a cuenta\t4) Retiro\n5) Transferencia\t6) Nuevo prestamo\t7) Pago\t\t\t8) Estado de cuenta\t9)Mostrar cuentas\nOpción: ");
 	}
 }
