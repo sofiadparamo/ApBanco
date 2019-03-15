@@ -54,7 +54,7 @@ public class ApBanco{
 					miBanco.mostrarTransacciones(true);
 					break;
 				case 13:
-					miBanco.crearCuenta(true);
+					//miBanco.crearCuenta(true);
 					break;
 				default:
 					System.out.println("Por favor ingrese una opción válida");

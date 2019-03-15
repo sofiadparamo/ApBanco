@@ -7,25 +7,25 @@ import java.util.GregorianCalendar;
 
 public class Banco{
 	
-	private Cuenta cuentasBancarias[] = new Cuenta[10000];
+	private CuentaNormal cuentasBancarias[] = new CuentaNormal[10000];
 	private Cuentahabiente clientes[] = new Cuentahabiente[10000];
 	private Transaccion operaciones[] = new Transaccion[100000000];
-	private Menor menores[] = new Menor[1000];
+	//private Menor menores[] = new Menor[1000];
 	private int transaccionActual=0;
 	
 	public Banco(){
 		Date today = new Date();
 		
-		cuentasBancarias[0] = new Cuenta("4152 3134 5661 5280",20.0f,"MAPA000811H45",today);
-		cuentasBancarias[1] = new Cuenta("4152 3465 3546 6546",150302.00f,"MAPE720728M30",today);
-		cuentasBancarias[2] = new Cuenta("4152 4578 1325 2531",564654.00f,"POLA860926K28",today);
-		cuentasBancarias[3] = new Cuenta("4152 9846 6546 2134",325465.25f,"TULA000204H85",today);
-		cuentasBancarias[4] = new Cuenta("4152 3215 9875 4735",6546.34f,"PETE650117M75",today);
-		cuentasBancarias[5] = new Cuenta("4152 6544 6545 7641",9878.95f,"CACO971227M86",today);
-		cuentasBancarias[6] = new Cuenta("4152 3465 1325 4675",1003.45f,"YOTU871123L98",today);
-		cuentasBancarias[7] = new Cuenta("4152 8975 1325 3216",25565.17f,"RETP610721H12",today);
-		cuentasBancarias[8] = new Cuenta("4152 3465 3456 6565",654.31f,"RATO760816L35",today);
-		cuentasBancarias[9] = new Cuenta("4152 6546 6485 6498",3.0f,"PERA910408H73",today);
+		cuentasBancarias[0] = new CuentaNormal("4152 3134 5661 5280",20.0f,"MAPA000811H45",today);
+		cuentasBancarias[1] = new CuentaNormal("4152 3465 3546 6546",150302.00f,"MAPE720728M30",today);
+		cuentasBancarias[2] = new CuentaNormal("4152 4578 1325 2531",564654.00f,"POLA860926K28",today);
+		cuentasBancarias[3] = new CuentaNormal("4152 9846 6546 2134",325465.25f,"TULA000204H85",today);
+		cuentasBancarias[4] = new CuentaNormal("4152 3215 9875 4735",6546.34f,"PETE650117M75",today);
+		cuentasBancarias[5] = new CuentaNormal("4152 6544 6545 7641",9878.95f,"CACO971227M86",today);
+		cuentasBancarias[6] = new CuentaNormal("4152 3465 1325 4675",1003.45f,"YOTU871123L98",today);
+		cuentasBancarias[7] = new CuentaNormal("4152 8975 1325 3216",25565.17f,"RETP610721H12",today);
+		cuentasBancarias[8] = new CuentaNormal("4152 3465 3456 6565",654.31f,"RATO760816L35",today);
+		cuentasBancarias[9] = new CuentaNormal("4152 6546 6485 6498",3.0f,"PERA910408H73",today);
 		
 		
 		clientes[0] = new Cuentahabiente("Encarnación Almonte Mendoza","Calle Estivalis No. 452","POLA860926K28",58492800000L,"(252) 677-6933");
@@ -40,16 +40,16 @@ public class Banco{
 		clientes[9] = new Cuentahabiente("Guadalupe J. Bustos Rebordosa","Calle Urkiaga No. 645","PERA910408H73",58492800000L,"(040) 299-9474");
 		
 		for(int i= 10; i<cuentasBancarias.length ; i++){
-			cuentasBancarias[i] = new Cuenta();
+			cuentasBancarias[i] = new CuentaNormal();
 		}
 		
 		for(int i= 10; i<clientes.length ; i++){
 			clientes[i] = new Cuentahabiente();
 		}
 		
-		for(int i = 0; i<menores.length; i++){
+		/*for(int i = 0; i<menores.length; i++){
 			menores[i] = new Menor();
-		}
+		}*/
 	}
 	
 	public void tests(){
@@ -100,7 +100,7 @@ public class Banco{
 		
 	}
 	
-	public void crearCuenta(boolean flag){
+	/*public void crearCuenta(boolean flag){
 		Random ran = new Random();
 		Scanner leer = new Scanner(System.in);
 		
@@ -165,7 +165,7 @@ public class Banco{
 		System.out.println("Se ha creado en " + today);
 		menores[indice].setFecha(today);
 		
-	}
+	}*/
 	
 	private boolean comprobarNumero(String numero){
 		int indice=0;
@@ -183,7 +183,7 @@ public class Banco{
 		return true;
 	}
 	
-	private boolean comprobarNumero(String numero, boolean empty){
+	/*private boolean comprobarNumero(String numero, boolean empty){
 		int indice=0;
 		
 		while(!empty){
@@ -197,7 +197,7 @@ public class Banco{
 			indice++;
 		}
 		return true;
-	}
+	}*/
 	
 	public void mostrarCuentas(){
 		int indice=0;
