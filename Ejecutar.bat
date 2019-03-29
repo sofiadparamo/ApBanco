@@ -1,4 +1,4 @@
-cd out
+cd out/artifacts/ApBanco
 cls
-java -jar ApBanco.jar
+java -jar ApBanco.jar -Xmx1024M
 pause

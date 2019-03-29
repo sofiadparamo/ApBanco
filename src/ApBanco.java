@@ -1,69 +1,30 @@
 import java.util.Scanner;
 
-public class ApBanco{
-	
-	public static void main(String[] args){
-		Scanner leer = new Scanner(System.in);
-		
-		Banco miBanco = new Banco();
-		
-		int op;
-		
-		do{
-			mostrarMenu();
-			op= leer.nextInt();
-			switch(op){
-				case 1:
-					miBanco.crearCuenta();
-					break;
-				case 2:
-					if(miBanco.registrarCuentahabiente()){
-						System.out.println("Éxito");
-					} else {
-						System.out.println("Este RFC ya existe");
-					}
-					break;
-				case 3:
-					miBanco.depositar();
-					break;
-				case 4:
-					miBanco.retirar();
-					break;
-				case 5:
-					//miBanco.transferencia();
-					break;
-				case 6:
-					//miBanco.nuevoPrestamo();
-					break;
-				case 7:
-					//miBanco.pagarPrestamo();
-					break;
-				case 8:
-					//miBanco.estadoDeCuenta();
-					break;
-				case 9:
-					miBanco.mostrarCuentas();
-					break;
-				case 10:
-					miBanco.mostrarCuentahabientes();
-					break;
-				case 11:
-					miBanco.mostrarTransacciones();
-					break;
-				case 12:
-					miBanco.mostrarTransacciones(true);
-					break;
-				case 13:
-					//miBanco.crearCuenta(true);
-					break;
-				default:
-					System.out.println("Por favor ingrese una opción válida");
-			}
-		}while(op!=25565);
-		
-		System.out.println("Apagando...");
-	}
-	
-	private static void mostrarMenu(){
-		System.out.print(" 1) Nueva cuenta\n 2) Nuevo Cuentahabiente\n 3) Depósito a cuenta\n 4) Retiro\n 5) Transferencia\n 6) Nuevo prestamo\n 7) Pago\n 8) Estado de cuenta\n 9) Mostrar cuentas\n10) Mostrar cuentahabientes\n11) Mostrar transacciones\n12) Mostrar transacciones por cuenta\n13) Crear cuenta para menor de edad\nOpción: ");	}
+public class ApBanco {
+    public static void main(String[] args) {
+        Scanner captura = new Scanner(System.in);
+        int op;
+
+        Banco miBanco = new Banco();
+        do {
+            System.out.print(
+                    "1) Nuevo Adulto                  2) Nueva Cuenta	\n" +
+                    "3) Deposito                      4) Retiro \n" +
+                    "5) Listar Cuentahabientes        6) Listar Cuentas\n" +
+                    "7) Nuevo Menor                   8) Transacciones\n"+
+                    "9) Nueva cuenta sin tarjeta     10) Nuevo Prestamo\t\t:");
+            op = captura.nextInt();
+
+            if (op == 1) miBanco.registrarAdulto();
+            if (op == 2) miBanco.crearCuenta();
+            if (op == 3) miBanco.depositar();
+            if (op == 4) miBanco.retirar();
+            if (op == 5) miBanco.listarCuentahabientes();
+            if (op == 6) miBanco.listarCuentas();
+            if (op == 7) miBanco.registrarMenor();
+            if (op == 8) miBanco.listarTransacciones();
+            if(op == 9) miBanco.crearCuentaSinTarjeta();
+            if(op == 10) miBanco.crearPrestamo();
+        } while (op!=25565);
+    }
 }

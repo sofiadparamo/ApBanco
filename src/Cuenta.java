@@ -1,36 +1,67 @@
-import java.util.Date;
+import java.util.Scanner;
 
+public abstract class Cuenta {
+    private String fecha;
+    private float saldo;
 
-public class Cuenta{
-	
-	private float saldo;
-	private Date fecha;
-	
-	public Cuenta(float saldo,Date fecha){
-		this.saldo=saldo;
-		this.fecha=fecha;
-	}
-	
-	public Cuenta(){
-		
-	}
+    Cuenta(String fecha, float saldo) {
+        this.saldo = saldo;
+        this.fecha = fecha;
+    }
 
+    Cuenta(){
 
-    public float getSaldo() {
+    }
+
+    protected void imprimeDatos(){
+        System.out.println("\n----------------------------");
+        System.out.println("Saldo:              "+saldo);
+        System.out.println("Fecha:              "+fecha);
+    }
+
+    protected void imprimeDatos(String text){
+        System.out.println("\n-------------"+text+"---------------");
+        System.out.println("Saldo:              "+saldo);
+        System.out.println("Fecha:              "+fecha);
+    }
+
+    protected void leerDatos(){
+        System.out.println("\n--------------Nuevo Cuenta--------");
+        Scanner miScan = new Scanner(System.in);
+        System.out.print("Fecha: ");
+        fecha = miScan.nextLine();
+        System.out.print("Saldo inicial: ");
+        saldo = miScan.nextFloat();
+    }
+
+    protected abstract void imprime();
+
+    protected abstract void leer();
+
+    protected abstract String getNumero();
+
+    float getSaldo() {
         return saldo;
     }
 
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
-    }
-
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    void setSaldo(float saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-	
-	
 }
+
+
+
+
+
+
+
+
+

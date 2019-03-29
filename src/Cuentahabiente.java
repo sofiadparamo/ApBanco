@@ -1,75 +1,78 @@
+import java.util.Scanner;
 
-import java.util.Date;
+public abstract class Cuentahabiente {
+    private String nombre, domicilio, rfc, fechaNacimiento;
 
-public class Cuentahabiente{
-	private String rfc;
-	private String nombre;
-	private String domicilio;
-	private Date fecha_nacimiento;
-	private String telefono;
-	
-	public Cuentahabiente(String nombre, String domicilio, String rfc, Long fecha_nacimiento, String telefono){
-		this.rfc=rfc;
-		this.nombre=nombre;
-		this.domicilio=domicilio;
-		Date fechaConvertida = new Date(fecha_nacimiento);
-		this.fecha_nacimiento =  fechaConvertida;
-		this.telefono=telefono;
-	}
-	
-	public Cuentahabiente(String nombre, String domicilio, String rfc, Date fecha_nacimiento, String telefono){
-		this.rfc=rfc;
-		this.nombre=nombre;
-		this.domicilio=domicilio;
-		this.rfc=rfc;
-		this.fecha_nacimiento =  fecha_nacimiento;
-		this.telefono=telefono;
-	}
-	
-	public Cuentahabiente(){
-		rfc = "null";
-	}
-	
+    Cuentahabiente(String nombre, String domicilio, String rfc,
+                          String fechaNacimiento) {
+        this.nombre = nombre;
+        this.domicilio = domicilio;
+        this.rfc = rfc;
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    Cuentahabiente() {
+
+    }
+
+
+    protected void imprimeDatos() {
+        System.out.println("-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-");
+        System.out.println("Nombre       :" + nombre);
+        System.out.println("Domicilio    :" + domicilio);
+        System.out.println("RFC          :" + rfc);
+        System.out.println("FechaNac     :" + fechaNacimiento);
+    }
+
+    protected void leerDatos() {
+        System.out.println("\n--------------Nuevo Cuentahabiente --------");
+        Scanner miScan = new Scanner(System.in);
+        System.out.print("Nombre: ");
+        nombre = miScan.nextLine();
+        System.out.print("Domicilio: ");
+        domicilio = miScan.nextLine();
+        System.out.print("RFC: ");
+        rfc = miScan.nextLine();
+        System.out.print("Fecha de Nacim: ");
+        fechaNacimiento = miScan.nextLine();
+    }
+
+    protected abstract void imprime();
+
+
+    protected abstract void leer();
+
+
 
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getDomicilio() {
         return domicilio;
     }
 
-    public void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
-    }
-
     public String getRfc() {
         return rfc;
+    }
+
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDomicilio(String domicilio) {
+        this.domicilio = domicilio;
     }
 
     public void setRfc(String rfc) {
         this.rfc = rfc;
     }
 
-    public Date getFecha_nacimiento() {
-        return fecha_nacimiento;
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
-
-    public void setFecha_nacimiento(Date fecha_nacimiento) {
-        this.fecha_nacimiento = fecha_nacimiento;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-	
-	
 }

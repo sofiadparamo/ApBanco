@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="23.0" y="151.0">Cuentahabiente</node>
+    <node x="162.0" y="78.0">CuentaSinTarjeta</node>
+    <node x="245.0" y="151.0">Transaccion</node>
+    <node x="149.0" y="302.0">ApBanco</node>
+    <node x="0.0" y="375.0">Banco</node>
+    <node x="114.0" y="229.0">Menor</node>
+    <node x="0.0" y="229.0">Adulto</node>
+    <node x="0.0" y="302.0">Prestamo</node>
+    <node x="0.0" y="78.0">CuentaNormal</node>
+    <node x="113.0" y="0.0">Cuenta</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="CuentaSinTarjeta" target="Cuenta">
+      <point x="0.0" y="-14.0" />
+      <point x="249.0" y="53.0" />
+      <point x="183.5" y="53.0" />
+      <point x="23.5" y="14.0" />
+    </edge>
+    <edge source="Menor" target="Cuentahabiente">
+      <point x="0.0" y="-14.0" />
+      <point x="157.0" y="204.0" />
+      <point x="141.5" y="204.0" />
+      <point x="39.5" y="14.0" />
+    </edge>
+    <edge source="Adulto" target="Cuentahabiente">
+      <point x="0.0" y="-14.0" />
+      <point x="47.0" y="204.0" />
+      <point x="62.5" y="204.0" />
+      <point x="-39.5" y="14.0" />
+    </edge>
+    <edge source="CuentaNormal" target="Cuenta">
+      <point x="0.0" y="-14.0" />
+      <point x="71.0" y="53.0" />
+      <point x="136.5" y="53.0" />
+      <point x="-23.5" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="247.3333333333336" y="260.0" />
+  <SelectedNodes>
+    <node>Prestamo</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
