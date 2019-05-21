@@ -3,4 +3,6 @@ Granados Dominguez Liliana|Calz.Ventura Puente 100 col. Ventura Puente|GADL99010
 Perez Jiménez Zoe Benjamin|Av. Morelos #345 Col. Felix Ireta|PEJZ990101|1999-01-01|4434030303|Conductor UBER
 Perez Granados Benji|Av. Morelos #345 Col. Felix Ireta|PEGB060101|2006-01-01|GADL990101|Perez Jiménez Zoe Benjamin|Granados Dominguez Liliana
 Avalos Rojas Aleli|Lago de Chapala 420|AVRA110101|2011-01-01|AUCL990101|Avalos Castro Agustin|Rojas Diaz Elisa
-Mauritania|2 de Mayo|PISM980326GIA|26-03-1998|34567654|Estudiante
+Yo xd|Aquí mero|MAPA000811|11-08-2000|4433540516|Estudiante
+Holi xd|Perez |soyunmenorxd|23213213|MAPA000811|asd|asd
+Dee|Doo|DEE|31-01-1998|321|Trabajador
