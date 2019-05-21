@@ -1,0 +1,6 @@
+Aguilar Calderon Luis Fernando|Av Madero 1200 col. Centro|AUCL990101|1999-01-01|4431234365|Empleado de la SEP
+Granados Dominguez Liliana|Calz.Ventura Puente 100 col. Ventura Puente|GADL990101|1999-01-01|4434020202|Educadora
+Perez Jiménez Zoe Benjamin|Av. Morelos #345 Col. Felix Ireta|PEJZ990101|1999-01-01|4434030303|Conductor UBER
+Perez Granados Benji|Av. Morelos #345 Col. Felix Ireta|PEGB060101|2006-01-01|GADL990101|Perez Jiménez Zoe Benjamin|Granados Dominguez Liliana
+Avalos Rojas Aleli|Lago de Chapala 420|AVRA110101|2011-01-01|AUCL990101|Avalos Castro Agustin|Rojas Diaz Elisa
+Mauritania|2 de Mayo|PISM980326GIA|26-03-1998|34567654|Estudiante

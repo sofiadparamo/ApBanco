@@ -1,3 +1,5 @@
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menor extends Cuentahabiente {
@@ -7,9 +9,9 @@ public class Menor extends Cuentahabiente {
     private String nombreMadre;
 
     Menor(String nombre, String domicilio, String rfc,
-                 String fechaNacimiento,
-                 String rfcTutor, String nombrePadre,
-                 String nombreMadre) {
+          String fechaNacimiento,
+          String rfcTutor, String nombrePadre,
+          String nombreMadre) {
         super(nombre, domicilio, rfc, fechaNacimiento);
         this.rfcTutor = rfcTutor;
         this.nombrePadre = nombrePadre;
@@ -23,57 +25,63 @@ public class Menor extends Cuentahabiente {
 
     @Override
     public void imprime() {
-        imprimeDatos();
-    }
-
-    public void imprimeDatos() {
         super.imprimeDatos();
         System.out.println("RFC Tutor    :" + rfcTutor);
         System.out.println("Madre        :" + nombreMadre);
         System.out.println("Padre        :" + nombrePadre);
     }
 
-
     @Override
-    public void leer() {
-        leerDatos();
-    }
-
-    @Override
-    public void leerDatos() {
-        super.leerDatos();
+    public void leer(String rfc,String rfcTutor) {
+        super.leerDatos(rfc);
         Scanner miScan = new Scanner(System.in);
-        System.out.print("RFC Tutor: ");
-        rfcTutor = miScan.nextLine();
+        this.rfcTutor = rfcTutor;
         System.out.print("Nombre Padre: ");
         nombrePadre = miScan.nextLine();
         System.out.print("Nombre Madre: ");
         nombreMadre = miScan.nextLine();
+
+        guardar();
+        System.out.println("Guardado");
+    }
+
+    @Override
+    public void guardar(){
+        String line;
+        line = super.getNombre()+"|"+super.getDomicilio()+"|"+super.getRfc()+"|"+super.getFechaNacimiento()+"|"+rfcTutor+"|"+nombrePadre+"|"+nombreMadre;
+        ArrayList<String> input = new ArrayList<>();
+        String linein;
+        BufferedReader entrada;
+        PrintWriter salida=null;
+
+        try{
+            entrada = new BufferedReader(new FileReader("data/cuentahabientes.txt"));
+            while((linein = entrada.readLine()) != null){
+                input.add(linein);
+            }
+
+            entrada.close();
+            salida = new PrintWriter(new FileWriter("data/cuentahabientes.txt"));
+
+            for (String elemento:input) {
+                salida.write(elemento+"\n");
+            }
+            salida.write(line+"\n");
+
+
+        } catch (IOException e){
+            System.out.println("Error em guardado de menor");
+        } finally {
+            if(salida != null){
+                salida.close();
+            }
+        }
     }
 
 
-    public String getRfcTutor() {
-        return rfcTutor;
+    @Override
+    public void leer(String rfc){
     }
 
-    public String getNombrePadre() {
-        return nombrePadre;
-    }
-
-    public String getNombreMadre() {
-        return nombreMadre;
-    }
-
-    public void setRfcTutor() {
-        this.rfcTutor = rfcTutor;
-    }
-
-    public void setNombrePadre() {
-        this.nombrePadre = nombrePadre;
-    }
-
-    public void setNombreMadre() {
-        this.nombreMadre = nombreMadre;
-    }
 
 }

@@ -3,49 +3,70 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="23.0" y="151.0">Cuentahabiente</node>
-    <node x="162.0" y="78.0">CuentaSinTarjeta</node>
-    <node x="245.0" y="151.0">Transaccion</node>
-    <node x="149.0" y="302.0">ApBanco</node>
-    <node x="0.0" y="375.0">Banco</node>
-    <node x="114.0" y="229.0">Menor</node>
-    <node x="0.0" y="229.0">Adulto</node>
-    <node x="0.0" y="302.0">Prestamo</node>
-    <node x="0.0" y="78.0">CuentaNormal</node>
-    <node x="113.0" y="0.0">Cuenta</node>
+    <node x="696.0" y="509.0">CuentaSinTarjeta</node>
+    <node x="625.0" y="847.0">ApBanco</node>
+    <node x="0.0" y="847.0">Banco</node>
+    <node x="1347.0" y="509.0">Prestamo</node>
+    <node x="1088.0" y="165.0">Cuenta</node>
+    <node x="175.15625" y="209.5">Cuentahabiente</node>
+    <node x="640.78125" y="0.0">Registro</node>
+    <node x="274.0" y="847.0">Transaccion</node>
+    <node x="330.0" y="542.0">Menor</node>
+    <node x="0.0" y="531.0">Adulto</node>
+    <node x="1056.0" y="553.0">CuentaNormal</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="CuentaSinTarjeta" target="Cuenta">
-      <point x="0.0" y="-14.0" />
-      <point x="249.0" y="53.0" />
-      <point x="183.5" y="53.0" />
-      <point x="23.5" y="14.0" />
-    </edge>
     <edge source="Menor" target="Cuentahabiente">
-      <point x="0.0" y="-14.0" />
-      <point x="157.0" y="204.0" />
-      <point x="141.5" y="204.0" />
-      <point x="39.5" y="14.0" />
+      <point x="0.0" y="-113.5" />
+      <point x="503.0" y="484.0" />
+      <point x="388.15625" y="484.0" />
+      <point x="71.0" y="102.5" />
     </edge>
     <edge source="Adulto" target="Cuentahabiente">
-      <point x="0.0" y="-14.0" />
-      <point x="47.0" y="204.0" />
-      <point x="62.5" y="204.0" />
-      <point x="-39.5" y="14.0" />
+      <point x="0.0" y="-124.5" />
+      <point x="155.0" y="484.0" />
+      <point x="246.15625" y="484.0" />
+      <point x="-71.0" y="102.5" />
+    </edge>
+    <edge source="Cuenta" target="Registro">
+      <point x="0.0" y="-147.0" />
+      <point x="1191.5" y="140.0" />
+      <point x="766.78125" y="140.0" />
+      <point x="42.0" y="57.5" />
+    </edge>
+    <edge source="Prestamo" target="Cuenta">
+      <point x="0.0" y="-146.5" />
+      <point x="1483.5" y="484.0" />
+      <point x="1260.5" y="484.0" />
+      <point x="69.0" y="147.0" />
     </edge>
     <edge source="CuentaNormal" target="Cuenta">
-      <point x="0.0" y="-14.0" />
-      <point x="71.0" y="53.0" />
-      <point x="136.5" y="53.0" />
-      <point x="-23.5" y="14.0" />
+      <point x="0.0" y="-102.5" />
+      <point x="0.0" y="147.0" />
+    </edge>
+    <edge source="CuentaSinTarjeta" target="Cuenta">
+      <point x="0.0" y="-146.5" />
+      <point x="866.0" y="484.0" />
+      <point x="1122.5" y="484.0" />
+      <point x="-69.0" y="147.0" />
+    </edge>
+    <edge source="Cuentahabiente" target="Registro">
+      <point x="0.0" y="-102.5" />
+      <point x="317.15625" y="140.0" />
+      <point x="682.78125" y="140.0" />
+      <point x="-42.0" y="57.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="247.3333333333336" y="260.0" />
-  <SelectedNodes>
-    <node>Prestamo</node>
-  </SelectedNodes>
-  <Categories />
+  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="110.42532467532465" y="783.2835497835493" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>
 </Diagram>

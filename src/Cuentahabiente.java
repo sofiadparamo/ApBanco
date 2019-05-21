@@ -1,6 +1,7 @@
+import java.io.IOException;
 import java.util.Scanner;
 
-public abstract class Cuentahabiente {
+public abstract class Cuentahabiente implements Registro{
     private String nombre, domicilio, rfc, fechaNacimiento;
 
     Cuentahabiente(String nombre, String domicilio, String rfc,
@@ -9,12 +10,13 @@ public abstract class Cuentahabiente {
         this.domicilio = domicilio;
         this.rfc = rfc;
         this.fechaNacimiento = fechaNacimiento;
+
+
     }
 
     Cuentahabiente() {
 
     }
-
 
     protected void imprimeDatos() {
         System.out.println("-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-o-");
@@ -24,24 +26,17 @@ public abstract class Cuentahabiente {
         System.out.println("FechaNac     :" + fechaNacimiento);
     }
 
-    protected void leerDatos() {
+    protected void leerDatos(String rfc) {
         System.out.println("\n--------------Nuevo Cuentahabiente --------");
         Scanner miScan = new Scanner(System.in);
         System.out.print("Nombre: ");
         nombre = miScan.nextLine();
         System.out.print("Domicilio: ");
         domicilio = miScan.nextLine();
-        System.out.print("RFC: ");
-        rfc = miScan.nextLine();
+        this.rfc=rfc;
         System.out.print("Fecha de Nacim: ");
         fechaNacimiento = miScan.nextLine();
     }
-
-    protected abstract void imprime();
-
-
-    protected abstract void leer();
-
 
 
     public String getNombre() {

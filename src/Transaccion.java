@@ -1,3 +1,6 @@
+import java.io.*;
+import java.util.ArrayList;
+
 public class Transaccion {
     private char tipo;
     private int folio;
@@ -14,7 +17,63 @@ public class Transaccion {
         this.referencia = referencia;
         this.fecha = fecha;
         this.monto = monto;
+
+        guardar();
     }
+
+    public Transaccion(char tipo, int folio, String cuenta, String referencia,
+                       String fecha, float monto,boolean flag) {
+        this.tipo = tipo;
+        this.folio = folio;
+        this.cuenta = cuenta;
+        this.referencia = referencia;
+        this.fecha = fecha;
+        this.monto = monto;
+
+    }
+
+    public void imprime() {
+        if (tipo == 'D')
+            System.out.print("Deposito\t\t");
+        else
+            System.out.print("Retiro\t\t\t");
+        System.out.println("Cuenta: " + cuenta + "\t\tMonto: " + monto);
+        System.out.println();
+    }
+
+    public void guardar() {
+        String line;
+        line = tipo + "|" + folio + "|" + cuenta + "|" + referencia + "|" + fecha + "|" + monto;
+        PrintWriter salida = null;
+        BufferedReader entrada;
+        ArrayList<String> input = new ArrayList<>();
+        String linein;
+
+        try {
+            entrada = new BufferedReader(new FileReader("data/transacciones.txt"));
+            while ((linein = entrada.readLine()) != null) {
+                input.add(linein);
+            }
+
+            entrada.close();
+
+            salida = new PrintWriter(new FileWriter("data/transacciones.txt"));
+
+            for (String elemento : input) {
+                salida.write(elemento + "\n");
+            }
+            salida.write(line + "\n");
+
+        } catch (
+                IOException e) {
+            System.out.println("Error en guardado de cuenta normal");
+        } finally {
+            if (salida != null) {
+                salida.close();
+            }
+        }
+    }
+
 
     public char getTipo() {
         return tipo;

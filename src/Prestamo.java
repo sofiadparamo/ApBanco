@@ -1,17 +1,18 @@
+import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Prestamo extends Cuenta {
 
-    private String rfc;
+    private String rfc, concepto;
     private float monto;
-    private String concepto;
 
     public Prestamo() {
         super();
     }
 
 
-    public Prestamo(String rfc, float monto, float saldo, String fecha, String concepto) {
+    public Prestamo(String fecha, String rfc, float monto, float saldo, String concepto) {
         super(fecha, saldo);
         this.rfc = rfc;
         this.monto = monto;
@@ -21,23 +22,76 @@ public class Prestamo extends Cuenta {
 
     @Override
     public void imprime(){
-        super.imprimeDatos("Prestamo");
-        System.out.println("RFC:                "+rfc);
-        System.out.println("Monto:              "+monto);
-        System.out.println("Concepto:           "+concepto);
+        if (super.imprimeDatos("Prestamo")) {
+            System.out.println("RFC:                " + rfc);
+            System.out.println("Monto:              " + monto);
+            System.out.println("Concepto:           " + concepto);
+        }
     }
 
     @Override
-    public void leer() {
-        super.leerDatos();
+    public void guardar(){
+        String line;
+        line = super.getFecha()+"|"+rfc+"|"+monto+"|"+getSaldo()+"|"+concepto;
+        PrintWriter salida=null;
+        BufferedReader entrada;
+        ArrayList<String> input = new ArrayList<>();
+        String linein;
+
+        try{
+            entrada = new BufferedReader(new FileReader("data/cuentas.txt"));
+            while((linein = entrada.readLine()) != null){
+                input.add(linein);
+            }
+
+            entrada.close();
+
+            salida = new PrintWriter(new FileWriter("data/cuentas.txt"));
+
+            for (String elemento:input) {
+                salida.write(elemento+"\n");
+            }
+            salida.write(line+"\n");
+
+        } catch (IOException e){
+            System.out.println("Error en guardado de cuenta normal");
+        } finally {
+            if(salida != null){
+                salida.close();
+            }
+        }
+
+    }
+
+    @Override
+    public void leer(String rfc) {
+        super.leerDatos(true);
+        boolean flag;
         Scanner leer = new Scanner(System.in);
 
-        System.out.print("RFC: ");
-        rfc = leer.nextLine();
-        System.out.print("Ingrese el monto del prestamo: ");
-        monto = Float.parseFloat(leer.nextLine());
+        this.rfc = rfc;
+        do {
+            System.out.print("Ingrese el monto del prestamo: ");
+            Scanner leer2 = new Scanner(System.in);
+            try {
+                monto = Float.parseFloat(leer2.nextLine());
+                flag=false;
+            } catch (Exception e){
+                System.out.println("Excepción en monto, debe ser flotante: "+e.toString());
+                flag=true;
+            }
+
+        }while (flag);
+
         System.out.print("Ingrese la razón del préstamo: ");
         concepto = leer.nextLine();
+        super.setSaldo(monto*1.25f);
+
+        guardar();
+    }
+
+    @Override
+    public void leer(String rfc, String numeroGenerado){
 
     }
 
